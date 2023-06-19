@@ -2,7 +2,9 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
 
-export default function Home() {
+export default function Home({data}) {
+  const posts = data.posts
+  console.log(posts);
   return (
     <div className="container">
       <Head>
@@ -176,4 +178,14 @@ export default function Home() {
       `}</style>
     </div>
   )
+}
+
+export function getStaticProps() {
+  return {
+    props : {
+      data : {
+        posts : [{title: 'new start'}]
+      }
+    }
+  }
 }
