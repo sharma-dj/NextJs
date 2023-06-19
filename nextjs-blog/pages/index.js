@@ -18,6 +18,7 @@ export default function Home({data}) {
           Read <Link href="/posts/first-post">this page</Link>
         </h1>
         <Image src="/images/dice.jpg" height={200} width={300} alt="dice"/>
+        <h2>Post : {posts[0].title}</h2>
       </main>
 
       <footer>
