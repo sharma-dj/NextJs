@@ -15,7 +15,8 @@ export default function Home({data}) {
       <main>
         <h1 className="title">
           Welcome to <a href="https://nextjs.org">Next.js!</a><br/>
-          Read <Link href="/posts/first-post">this page</Link>
+          Read <Link href="/posts/first-post">Fist Page</Link><br/>
+          Read <Link href="/posts/first-post">Second Page</Link>
         </h1>
         <Image src="/images/dice.jpg" height={200} width={300} alt="dice"/>
         <h2>Post : {posts[0].title}</h2>
