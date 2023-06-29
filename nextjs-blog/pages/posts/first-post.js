@@ -17,6 +17,7 @@ export default function FirstPost() {
                 />
             </Head>
             <h1>First Post</h1>
+            <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Curabitur sit amet nibh in purus euismod tempor. Nunc molestie dapibus accumsan. Duis id nisl ante. Ut dictum cursus imperdiet. Nulla cursus, nibh sit amet sodales pretium, nisi erat elementum nisl, et porttitor nisi eros id enim. Sed libero metus, suscipit non neque a, feugiat pharetra lacus. Mauris ullamcorper rutrum porttitor. Maecenas ac mi tincidunt, efficitur dui sit amet, auctor mauris. Etiam sed sollicitudin purus. Aliquam erat volutpat. Ut eleifend massa sit amet ornare eleifend. Phasellus tincidunt tortor eu fringilla feugiat.</p>
             Go <Link href="/">back</Link>
         </Layout>
     )
