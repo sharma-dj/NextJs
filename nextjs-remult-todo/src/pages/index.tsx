@@ -19,7 +19,7 @@ export default function Home() {
       <main className="bg-white border rounded-lg shadow-lg m-5 w-screen max-w-lg">
       {tasks.map((task) => {
         return (
-          <div key={task.id} className="border-b px-6 gap-2 flex items-center p-2">
+          <div key={task.id} className="border-b px-6 gap-2 flex items-center p-3">
             <input type="checkbox" name="complete" id={`complete-${task.id}`} checked={task.completed} className="w-6 h-6"/>
             {task.title}
           </div>
