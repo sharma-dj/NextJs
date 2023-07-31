@@ -47,9 +47,11 @@ export default function Home() {
           <button>Add</button>
         </form>
       {tasks.map((task) => {
+        const setTask = (value:Task) => setTasks(tasks.map((t) => (t === task ? value : t)));
+        const setCompleted = async (completed: boolean) => setTask(await TaskRepo.save({ ...task, completed }));
         return (
           <div key={task.id} className="border-b px-6 gap-2 flex items-center p-2">
-            <input type="checkbox" name="complete" id={`complete-${task.id}`} checked={task.completed} className="w-6 h-6"/>
+            <input type="checkbox" name="complete" id={`complete-${task.id}`} checked={task.completed} className="w-6 h-6" onChange={(e) => setCompleted(e.target.checked)}/>
             {task.title}
           </div>
         )
