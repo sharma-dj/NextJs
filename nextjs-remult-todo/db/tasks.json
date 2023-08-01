@@ -13,7 +13,7 @@
   },
   {
     "id": 3,
-    "title": "Study",
+    "title": "Study Math",
     "completed": false,
     "createdAt": "2023-07-01T13:23:55.574Z"
   },
@@ -32,7 +32,13 @@
   {
     "id": 6,
     "title": "Take Bath",
-    "completed": false,
+    "completed": true,
     "createdAt": "2023-07-30T21:49:54.845Z"
+  },
+  {
+    "id": 7,
+    "title": "Clean Room",
+    "completed": false,
+    "createdAt": "2023-08-01T22:37:41.915Z"
   }
 ]

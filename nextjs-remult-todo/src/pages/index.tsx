@@ -49,10 +49,19 @@ export default function Home() {
       {tasks.map((task) => {
         const setTask = (value:Task) => setTasks(tasks.map((t) => (t === task ? value : t)));
         const setCompleted = async (completed: boolean) => setTask(await TaskRepo.save({ ...task, completed }));
+        const setTitle = (title: string) => setTask({...task,title});
+        const saveTask = async () => {
+          try {
+            setTask( await TaskRepo.save(task) );
+          } catch (err: any) {
+            alert(err.message);
+          }
+        };
         return (
           <div key={task.id} className="border-b px-6 gap-2 flex items-center p-2">
             <input type="checkbox" name="complete" id={`complete-${task.id}`} checked={task.completed} className="w-6 h-6" onChange={(e) => setCompleted(e.target.checked)}/>
-            {task.title}
+            <input type="text" value={task.title} onChange={(e) => setTitle(e.target.value)} />
+            <button onClick={saveTask}>Save</button>
           </div>
         )
       })}
