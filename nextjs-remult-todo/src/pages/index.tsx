@@ -57,11 +57,20 @@ export default function Home() {
             alert(err.message);
           }
         };
+        const deleteTask = async () => {
+          try {
+            await TaskRepo.delete(task);
+            setTasks(tasks.filter((t) => t !== task));
+          } catch (err: any) {
+            alert(err.message);
+          }
+        };
         return (
           <div key={task.id} className="border-b px-6 gap-2 flex items-center p-2">
             <input type="checkbox" name="complete" id={`complete-${task.id}`} checked={task.completed} className="w-6 h-6" onChange={(e) => setCompleted(e.target.checked)}/>
             <input type="text" value={task.title} onChange={(e) => setTitle(e.target.value)} />
             <button onClick={saveTask}>Save</button>
+            <button onClick={deleteTask}>Delete</button>
           </div>
         )
       })}

@@ -6,12 +6,6 @@
     "createdAt": "2023-07-01T12:59:29.482Z"
   },
   {
-    "id": 2,
-    "title": "Clean Shoes",
-    "completed": false,
-    "createdAt": "2023-07-01T13:03:09.613Z"
-  },
-  {
     "id": 3,
     "title": "Study Math",
     "completed": false,
