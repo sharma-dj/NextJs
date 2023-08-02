@@ -35,16 +35,21 @@ export default function Home() {
   },[])
   return (
     <div className="bg-grey-50 h-screen flex flex-col items-center justify-center text-lg">
-      <h1 className="text-red-500 text-6xl">Todo</h1>
+      <h1 className="text-red-500 text-6xl">Todo {tasks.length}</h1>
       <main className="bg-white border rounded-lg shadow-lg m-5 w-screen max-w-lg">
-        <form onSubmit={addTask}>
+        <form onSubmit={addTask} 
+          className="border-b-2 px-6 gap-2 p-2 flex"
+        >
           <input 
+            className="w-full"
             type="text"
             value={newTaskTitle}
             onChange={(e) => setNewTaskTitle(e.target.value)}
             placeholder="What you want to get done"
           />
-          <button>Add</button>
+          <button><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+</svg></button>
         </form>
       {tasks.map((task) => {
         const setTask = (value:Task) => setTasks(tasks.map((t) => (t === task ? value : t)));
@@ -68,9 +73,13 @@ export default function Home() {
         return (
           <div key={task.id} className="border-b px-6 gap-2 flex items-center p-2">
             <input type="checkbox" name="complete" id={`complete-${task.id}`} checked={task.completed} className="w-6 h-6" onChange={(e) => setCompleted(e.target.checked)}/>
-            <input type="text" value={task.title} onChange={(e) => setTitle(e.target.value)} />
-            <button onClick={saveTask}>Save</button>
-            <button onClick={deleteTask}>Delete</button>
+            <input className="w-full" type="text" value={task.title} onChange={(e) => setTitle(e.target.value)} />
+            <button onClick={saveTask}><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6 text-green-600">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+</svg></button>
+            <button onClick={deleteTask}><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6 text-red-600">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+</svg></button>
           </div>
         )
       })}
@@ -78,3 +87,5 @@ export default function Home() {
     </div>
   )
 }
+// Notes:
+// https://heroicons.com/
