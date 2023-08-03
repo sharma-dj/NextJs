@@ -9,8 +9,11 @@ export class Task {
   @Fields.autoIncrement()
   id = ""
 
-  @Fields.string({
-    validate:Validators.required
+  @Fields.string<Task>({
+    validate: task => {
+      if (task.title.length < 3)
+        throw Error("Too short")
+    }
   })
   title = ""
 
