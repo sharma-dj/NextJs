@@ -90,6 +90,14 @@ export default function Home() {
           </div>
         )
       })}
+      <div className="border-t px-6 py-2 gap-4 flex justify-between">
+        <button className="bg-blue-500 text-white px-3 py-1 font-semibold rounded-lg" onClick={() => setAllCompleted(true)}>
+          Set All Completed
+        </button>
+        <button className="bg-blue-500 text-white px-3 py-1 font-semibold rounded-lg" onClick={() => setAllCompleted(false)}>
+          Set All UnCompleted
+        </button>
+      </div>
       </main>
     </div>
   )
