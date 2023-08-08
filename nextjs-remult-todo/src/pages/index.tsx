@@ -2,6 +2,7 @@ import { TasksController } from "../shared/TasksController"
 import { Task } from "../shared/Task"
 import { FormEvent, useEffect, useState } from "react"
 import { remult } from "remult"
+import { signIn, useSession } from "next-auth/react"
 
 const TaskRepo = remult.repo(Task)
 
@@ -39,8 +40,11 @@ export default function Home() {
     fetchTasks().then(setTasks);
   }
 
+  const session = useSession();
+
   useEffect(() => {
-    fetchTasks().then(setTasks)
+    if (session.status === 'unauthenticated') signIn()
+    else fetchTasks().then(setTasks)
   },[])
   return (
     <div className="bg-grey-50 h-screen flex flex-col items-center justify-center text-lg">
