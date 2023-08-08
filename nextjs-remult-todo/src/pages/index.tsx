@@ -1,3 +1,4 @@
+import { TasksController } from "../shared/TasksController"
 import { Task } from "../shared/Task"
 import { FormEvent, useEffect, useState } from "react"
 import { remult } from "remult"
@@ -31,9 +32,10 @@ export default function Home() {
   }
 
   const setAllCompleted = async (completed: boolean) => {
-    for (const task of await TaskRepo.find()) {
+    TasksController.setAllCompleted(completed);
+    /*for (const task of await TaskRepo.find()) {
       await TaskRepo.save({...task,completed});
-    }
+    }*/
     fetchTasks().then(setTasks);
   }
 

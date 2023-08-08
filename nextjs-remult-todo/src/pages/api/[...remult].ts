@@ -2,8 +2,9 @@
 
 import { remultNext } from "remult/remult-next"
 import { Task } from "../../shared/Task"
-//import { User } from "../../shared/User"
+import { TasksController } from "@/shared/TasksController"
 
 export default remultNext({
+  controllers: [TasksController],
   entities: [Task]
 })
