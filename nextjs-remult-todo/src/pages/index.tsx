@@ -2,7 +2,7 @@ import { TasksController } from "../shared/TasksController"
 import { Task } from "../shared/Task"
 import { FormEvent, useEffect, useState } from "react"
 import { remult } from "remult"
-import { signIn, useSession } from "next-auth/react"
+import { signIn, signOut, useSession } from "next-auth/react"
 
 const TaskRepo = remult.repo(Task)
 
@@ -50,6 +50,10 @@ export default function Home() {
     <div className="bg-grey-50 h-screen flex flex-col items-center justify-center text-lg">
       <h1 className="text-red-500 text-6xl">Todo {tasks.length}</h1>
       <main className="bg-white border rounded-lg shadow-lg m-5 w-screen max-w-lg">
+        <div>
+          {/* Hello {remult.user?.name} */}
+          <button onClick={() => signOut()}>Sign Out</button>
+        </div>
         <form onSubmit={addTask} 
           className="border-b-2 px-6 gap-2 p-2 flex"
         >
