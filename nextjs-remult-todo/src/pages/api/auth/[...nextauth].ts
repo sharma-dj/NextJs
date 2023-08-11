@@ -1,3 +1,5 @@
+import { NextApiRequest } from "next"
+import { getToken } from "next-auth/jwt"
 import NextAuth from "next-auth/next"
 import CredentialsProvider from "next-auth/providers/credentials"
 import { UserInfo } from "remult"
@@ -22,3 +24,8 @@ export default NextAuth({
         })
     ]
 })
+
+export async function getUserFromNextAuth(req:NextApiRequest) {
+    const token = await getToken({req});
+    return validUsers.find(user => user.id === token?.sub);
+}
