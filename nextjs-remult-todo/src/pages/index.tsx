@@ -50,7 +50,7 @@ export default function Home() {
     <div className="bg-grey-50 h-screen flex flex-col items-center justify-center text-lg">
       <h1 className="text-red-500 text-6xl">Todo {tasks.length}</h1>
       <main className="bg-white border rounded-lg shadow-lg m-5 w-screen max-w-lg">
-        <div>
+        <div className="flex justify-between px-6 p-2 border-b">
           Hello (session.data?.user?.name){" "}
           <button onClick={() => signOut()}>Sign Out</button>
         </div>
