@@ -51,7 +51,7 @@ export default function Home() {
       <h1 className="text-red-500 text-6xl">Todo {tasks.length}</h1>
       <main className="bg-white border rounded-lg shadow-lg m-5 w-screen max-w-lg">
         <div className="flex justify-between px-6 p-2 border-b">
-          Hello (session.data?.user?.name){" "}
+          Hello {session.data?.user?.name}{" "}
           <button onClick={() => signOut()}>Sign Out</button>
         </div>
         <form onSubmit={addTask} 
