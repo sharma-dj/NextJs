@@ -15,7 +15,7 @@ export default NextAuth({
             credentials: {
                 name: {
                     label: "Username",
-                    placeholder: "Try dj or am"
+                    placeholder: "Try dj or am!"
                 }
             },
             authorize:
